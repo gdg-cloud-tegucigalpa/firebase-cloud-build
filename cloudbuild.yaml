@@ -4,10 +4,10 @@ steps:
       args: ['npm','install']
     # Test
     - name: 'buildkite/puppeteer'
-      args: ['npm', 'run', 'test --no-sandbox', ]
+      args: ['npm', 'run', 'test', '--no-sandbox' ]
     # Build
     - name: 'buildkite/puppeteer'
-      args: ['npm', 'run', 'build --prod', ]
+      args: ['npm', 'run', 'build', '--prod' ]
     # Deploy
     - name: 'gcr.io/$PROJECT_ID/firebase'
       args: ['deploy']
