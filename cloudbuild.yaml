@@ -1,11 +1,12 @@
 steps:
     # Install
-    - name: node:10.15.1
-      entrypoint: npm
-      args: ['install']
+    - name: 'buildkite/puppeteer'
+      args: ['npm','install']
+    # Test
+    - name: 'buildkite/puppeteer'
+      args: ['npm', 'run', 'test', ]
     # Build
-    - name: node:10.15.1
-      entrypoint: npm
+    - name: 'buildkite/puppeteer'
       args: ['run', 'build', '--prod']
     # Deploy
     - name: 'gcr.io/$PROJECT_ID/firebase'
