@@ -1,12 +1,15 @@
 steps:
     # Install
-    - name: 'gcr.io/cloud-builders/npm:node-10.15.1'
+    - name: node:10.15.1
+      entrypoint: npm
       args: ['install']
     # Test
-    - name: 'gcr.io/cloud-builders/npm:node-10.15.1'
+    - name: node:10.15.1
+      entrypoint: npm
       args: ['run', 'test']
     # Build
-    - name: 'gcr.io/cloud-builders/npm:node-10.15.1'
+    - name: node:10.15.1
+      entrypoint: npm
       args: ['run', 'build --prod']
     # Deploy
     - name: 'gcr.io/$PROJECT_ID/firebase'
