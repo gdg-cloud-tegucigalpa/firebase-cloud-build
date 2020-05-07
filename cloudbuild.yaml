@@ -4,7 +4,7 @@ steps:
       args: ['npm','install']
     # Test
     - name: 'buildkite/puppeteer'
-      args: ['npm', 'run', 'test', ]
+      args: ['npm', 'run', 'test', '--no-sandbox']
     # Build
     - name: 'buildkite/puppeteer'
       args: ['run', 'build', '--prod']
