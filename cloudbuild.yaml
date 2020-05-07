@@ -6,7 +6,7 @@ steps:
     # Build
     - name: node:10.15.1
       entrypoint: npm
-      args: ['run', 'build']
+      args: ['run', 'build', '--prod']
     # Deploy
     - name: 'gcr.io/$PROJECT_ID/firebase'
       args: ['deploy']
