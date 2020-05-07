@@ -4,9 +4,8 @@ steps:
       entrypoint: npm
       args: ['install']
     # Test
-    - name: node:10.15.1
-      entrypoint: npm
-      args: ['run', 'test']
+    - name: 'gcr.io/$PROJECT_ID/ng'
+      args: ['test']
     # Build
     - name: node:10.15.1
       entrypoint: npm
