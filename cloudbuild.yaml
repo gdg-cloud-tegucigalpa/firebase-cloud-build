@@ -1,12 +1,12 @@
 steps:
     # Install
-    - name: 'buildkite/puppeteer'
+    - name: 'buildkite/puppeteer:v3.0.1'
       args: ['npm','install']
     # Test
-    - name: 'buildkite/puppeteer'
+    - name: 'buildkite/puppeteer:v3.0.1'
       args: ['npm', 'run', 'test', '--no-sandbox']
     # Build
-    - name: 'buildkite/puppeteer'
+    - name: 'buildkite/puppeteer:v3.0.1'
       args: ['npm', 'run', 'build', '--prod']
     # Deploy
     - name: 'gcr.io/$PROJECT_ID/firebase'
